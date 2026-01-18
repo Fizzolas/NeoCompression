@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "neocompression"
+version = "0.1.0"
+description = "Adaptive binary compression tool for arbitrary files and folders"
+authors = ["Fizzolas <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,12 +1,43 @@
-[tool.poetry]
-name = "neocompression"
-version = "0.1.0"
-description = "Adaptive binary compression tool for arbitrary files and folders"
-authors = ["Fizzolas <you@example.com>"]
-
-[tool.poetry.dependencies]
-python = ">=3.10,<3.13"
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NeoCompression"
+version = "1.0.0"
+description = "Adaptive binary compression tool that converts files/folders into highly compressed ASCII representations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Fizzolas"},
+]
+keywords = ["compression", "binary", "archiving", "backup"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Archiving :: Compression",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/Fizzolas/NeoCompression"
+Repository = "https://github.com/Fizzolas/NeoCompression"
+Issues = "https://github.com/Fizzolas/NeoCompression/issues"
+
+[project.scripts]
+neocompression = "neocompression.cli:main"
+neo = "neocompression.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["neocompression*"]
+
+[tool.setuptools.package-data]
+neocompression = ["*.py"]
